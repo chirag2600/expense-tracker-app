@@ -37,7 +37,7 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+    console.log(signUpData);
     try {
       await signUp({
         variables: {
@@ -45,6 +45,7 @@ const SignUpPage = () => {
         },
       });
     } catch (err) {
+      console.log(err.message);
       toast.error(err.message);
     }
   };

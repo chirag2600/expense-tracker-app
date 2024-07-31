@@ -11,9 +11,9 @@ const client = new ApolloClient({
   uri:
     import.meta.env.VITE_NODE_ENV === "development"
       ? "http://localhost:4000/graphql"
-      : "/graphql", // URL of our GraphQL server
+      : "https://expense-tracker-app-mnjg.onrender.com/graphql", // URL of our GraphQL server
   cache: new InMemoryCache(), // Apollo Client uses this to cache query results after fetching them
-  credentials: true, // this tells Apollo Client to send cookies along with every request to the server
+  credentials: "include", // this tells Apollo Client to send cookies along with every request to the server
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
